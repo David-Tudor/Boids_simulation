@@ -1,0 +1,4 @@
+# Ignore npz files
+*.npz
+*.c
+*.so

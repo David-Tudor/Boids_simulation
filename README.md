@@ -9,12 +9,12 @@ Compile using the following command.
 The command to run the program is shown below, as well as example arguments.
 > python run_boids_omp.py NUM_BOIDS NUM_HAWKS NUM_THREADS
 
-> python run_boids_omp.py 10000 15 4 
+> python run_boids_omp.py 10000 15 4
 
 
 ## Run MPI program 
 Compile using the following command.
-> CC=gcc-14 python setup_boids_mpi.py build_ext -fi
+> CC=gcc-14 python setup_boids_mpi.py build_ext -O3 -fi
 
 The command to run the program is shown below, as well as example arguments.
 > mpirun -np NUM_THREADS python3 -m run_boids_mpi NUM_BOIDS NUM_HAWKS

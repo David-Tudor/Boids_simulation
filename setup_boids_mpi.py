@@ -6,6 +6,7 @@ ext_modules = [
     Extension(
         "boids_mpi",
         ["boids_mpi.pyx"],
+        extra_compile_args=['-O3'],
         libraries=["m", "mpi"]
     )
 ]
