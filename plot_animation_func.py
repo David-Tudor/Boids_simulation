@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 import matplotlib.animation
 import numpy as np
 
-def plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y):
+def plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y, computation_time):
     """
     Plot an animation using the recorded data.
     t_record is an array of times: [double]
@@ -27,11 +27,12 @@ def plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max
         eaten_plot.set_offsets(np.transpose([current_data[:current_num_eaten,0],current_data[:current_num_eaten,1]]))
         hawk_plot.set_offsets(np.transpose([current_hawk_data[:,0],current_hawk_data[:,1]]))
 
-        ax.set_title("Time={:.3f} s".format(t_record[ti]))
+        ax.set_title(f"Number of Boids = {num_boids:.1e}, computation time = {computation_time:.2f}s,\nanimation time={t_record[ti]:.2f}s")
 
     fig = plt.figure()
     ax = fig.add_subplot()
-    ax.set(xlabel="x", ylabel="y", xlim=(0,max_x), ylim=(0,max_y), title=f"Time=0.000 s")
+    num_boids = len(data_record[0])
+    ax.set(xlabel="x", ylabel="y", xlim=(0,max_x), ylim=(0,max_y), title=f"Number of Boids = {num_boids}, computation time = {computation_time}, animation time={t_record[0]:.3f} s")
 
     boid_plot = ax.scatter(data_record[0,:,0], data_record[0,:,1], s=0.1, color=boid_col_tup)
     eaten_plot = ax.scatter([], [], s=0.1, color=eaten_col_tup)

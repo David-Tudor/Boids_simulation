@@ -25,7 +25,7 @@ if int(len(sys.argv)) == 4 or int(len(sys.argv)) == 5:
         (computation_time, num_boids, num_hawks, threads, grid_size, max_x, max_y) = run_parameters
 
         print(f"Computation time was: {round(computation_time, 3)}s")
-        plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y)
+        plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y, computation_time)
 
 else:
     print(f"Usage: {sys.argv[0]} <NUM_BOIDS> <NUM_HAWKS> <NUM_THREADS> <GRID_SIZE>\nNote that <GRID_SIZE> is an optional argument.")

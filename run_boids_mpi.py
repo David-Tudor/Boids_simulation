@@ -32,7 +32,7 @@ if int(len(sys.argv)) == 3 or int(len(sys.argv)) == 4:
 
             print(f"Computation time was: {round(computation_time, 3)}s")
             sys.stdout.flush()
-            plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y)
+            plot_animation(t_record, data_record, hawk_record, cumulative_num_eaten, max_x, max_y, computation_time)
 
 else:
     if rank == MANAGER:
